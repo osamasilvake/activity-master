@@ -1,7 +1,3 @@
-# MERN Stack Application with MongoDB Atlas, Express.js, and Vue.js
-
-This application is built using the **MERN stack**: MongoDB, Express.js, and Node.js for the backend, with **Vue.js** for the frontend. The application connects to a MongoDB database hosted on **MongoDB Atlas**.
-
 ## **Features**
 
 - CRUD operations (Create, Read, Update, Delete)
@@ -14,7 +10,7 @@ Ensure you have the following installed on your machine:
 
 - **Node.js**:
 - **npm**: yarn or npm
-- **MongoDB Atlas Account**: [Create an account on MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+- **MongoDB Atlas Account**
 - **to connect with database **
   1:use mongo atlas connnection type is driver
   2: install mongodb
