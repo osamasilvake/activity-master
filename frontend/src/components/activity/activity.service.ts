@@ -15,7 +15,7 @@ class ActivityService {
 
   addActivity = (description: string) => {
     const url = AppConfigService.AppServices.VIEWS.ACTIVITY.POSTACTIVITY;
-    return HttpClientService.post(url, description);
+    return HttpClientService.post(url, { description });
   };
 
   deleteActivity = (activityId: number) => {

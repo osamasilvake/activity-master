@@ -1,9 +1,8 @@
 import { defineStore } from "pinia";
-import axios from "axios";
+
 import { ActivityFilterEnum } from "../../components/activity-filter/ActivityFilter.enum";
 import { Activity } from "./Activity.interface";
 import ActivityService from "../../components/activity/activity.service";
-import { AppConfigService } from "../../services";
 
 export const useActivitiesStore = defineStore("activities", {
   // State
@@ -46,25 +45,39 @@ export const useActivitiesStore = defineStore("activities", {
       }
     },
 
-    // add activity
     async addActivity(description: string) {
       try {
-        const response = await axios.post(
-          AppConfigService.AppServices.VIEWS.ACTIVITY.POSTACTIVITY, // activity/add
-          {
-            description,
-          }
-        );
-
+        const response = (await ActivityService.addActivity(
+          description
+        )) as Activity[];
         this.activities.unshift({
-          _id: response.data._id,
-          description: response.data.description,
+          _id: response._id,
+          description: response.description,
           completed: false,
         });
       } catch (err: any) {
         this.error = err.message || "Failed to add activity";
       }
     },
+    // add activity
+    // async addActivity(description: string) {
+    //   try {
+    //     const response = await axios.post(
+    //       AppConfigService.AppServices.VIEWS.ACTIVITY.POSTACTIVITY, // activity/add
+    //       {
+    //         description,
+    //       }
+    //     );
+
+    //     this.activities.unshift({
+    //       _id: response.data._id,
+    //       description: response.data.description,
+    //       completed: false,
+    //     });
+    //   } catch (err: any) {
+    //     this.error = err.message || "Failed to add activity";
+    //   }
+    // },
 
     // update activity
     async toggleActivity(id: number, completed: boolean) {
