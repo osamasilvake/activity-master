@@ -1,3 +1,5 @@
+1: - **git clone https://github.com/osamasilvake/activity-master.git**
+
 ## **Features**
 
 - CRUD operations (Create, Read, Update, Delete)
@@ -10,8 +12,9 @@ Ensure you have the following installed on your machine:
 
 - **Node.js**:
 - **npm**: yarn or npm
+- **to connect with database**
 - **MongoDB Atlas Account**
-- **to connect with database **
+- **to connect with database**
   1:use mongo atlas connnection type is driver
 
 **Note**
@@ -34,3 +37,5 @@ MONGO_URI="mongodb+srv://mosama007pak:GA4NjVS7JQDSycje@cluster0.ggobd.mongodb.ne
 
 // node-js must have in system plus npm or yarn
 add env files for both
+
+**must have git-bash in system**
