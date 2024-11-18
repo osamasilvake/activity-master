@@ -13,7 +13,6 @@ Ensure you have the following installed on your machine:
 - **MongoDB Atlas Account**
 - **to connect with database **
   1:use mongo atlas connnection type is driver
-  2: install mongodb
 
 **Note**
 
