@@ -59,25 +59,6 @@ export const useActivitiesStore = defineStore("activities", {
         this.error = err.message || "Failed to add activity";
       }
     },
-    // add activity
-    // async addActivity(description: string) {
-    //   try {
-    //     const response = await axios.post(
-    //       AppConfigService.AppServices.VIEWS.ACTIVITY.POSTACTIVITY, // activity/add
-    //       {
-    //         description,
-    //       }
-    //     );
-
-    //     this.activities.unshift({
-    //       _id: response.data._id,
-    //       description: response.data.description,
-    //       completed: false,
-    //     });
-    //   } catch (err: any) {
-    //     this.error = err.message || "Failed to add activity";
-    //   }
-    // },
 
     // update activity
     async toggleActivity(id: number, completed: boolean) {
