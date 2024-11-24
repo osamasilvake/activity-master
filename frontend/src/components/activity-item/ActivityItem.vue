@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { POSITION, useToast } from "vue-toastification";
 import { useActivitiesStore } from "../../stores/activity-list/Activity.store";
 import Loading from "../common/Loading.vue";
 import { faSmile, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,7 @@ defineProps({
 });
 
 const activitiesStore = useActivitiesStore();
+const toast = useToast();
 
 const toggleActivity = (id: number, completed: boolean) => {
   activitiesStore.toggleActivity(id, completed);
@@ -16,6 +18,10 @@ const toggleActivity = (id: number, completed: boolean) => {
 
 const deleteActivity = (id: number) => {
   activitiesStore.deleteActivity(id);
+  toast.error("Activity successfully deleted!", {
+    timeout: 1000, // in milliseconds
+    position: POSITION.BOTTOM_RIGHT,
+  });
 };
 </script>
 

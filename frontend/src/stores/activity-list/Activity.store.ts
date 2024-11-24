@@ -8,9 +8,9 @@ export const useActivitiesStore = defineStore("activities", {
   // State
   state: () => ({
     activities: [] as Activity[],
-    loading: false,
+    loading: false as boolean,
     error: null as string | null,
-    filter: ActivityFilterEnum.FILTER_ALL,
+    filter: ActivityFilterEnum.FILTER_ALL as string,
   }),
 
   getters: {

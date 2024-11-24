@@ -6,12 +6,16 @@ import { dateFormat } from "../../utility/helpers/Date";
 const welcomeMessage = () => {
   const greetings = "Good";
 
-  // Get the current hour using dayjs formatted as 24-hour time
-  const currentHourString = dateFormat(null, "HH"); // "HH" is for 24-hour format
-  const currentHour = Number(currentHourString); // Convert to number
+  // Get the current hour based on the local timezone
+  const currentHourString = dateFormat(null, "HH"); // "HH" gives 24-hour format
+  const currentHour = Number(currentHourString);
 
-  console.log("Current Hour:", currentHour); // Debug: Check the value of currentHour
+  if (isNaN(currentHour)) {
+    console.error("Invalid hour retrieved:", currentHourString);
+    return `${greetings} Day`; // Default greeting if time parsing fails
+  }
 
+  // Determine the appropriate greeting based on the hour
   if (currentHour < 12) {
     return `${greetings} Morning`;
   } else if (currentHour <= 17) {

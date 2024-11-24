@@ -6,7 +6,7 @@ export interface Activity {
 
 export interface ActivitiesState {
   activities: Activity[];
-  // post: Record<number, Activity> | null;
   loading: boolean;
-  loaded: boolean;
+  error: null | string;
+  filter: string;
 }

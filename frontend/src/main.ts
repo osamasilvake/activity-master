@@ -22,6 +22,8 @@
 
 /* Set up using Vue 3 */
 import { createApp } from "vue";
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 import App from "./App.vue";
 import "./style.css";
 const pinia = createPinia();
@@ -39,6 +41,7 @@ import { createPinia } from "pinia";
 library.add(faTrash, faSmile);
 
 const app = createApp(App);
+app.use(Toast);
 app.use(pinia);
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.mount("#app");
